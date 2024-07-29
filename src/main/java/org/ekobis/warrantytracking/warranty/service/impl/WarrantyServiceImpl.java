@@ -80,7 +80,7 @@ public class WarrantyServiceImpl implements WarrantyService {
     public ResponseEntity<DataResponse<WarrantyResponse>> getByWarrantyId(String warrantyId) {
 
         WarrantyEntity warrantyEntity = warrantyRepository.findById(warrantyId).orElseThrow(
-                () -> new NotFoundDeviceId("Not Found Warrant ID: " + warrantyId));
+                () -> new NotFoundWarrantId("Not Found Warrant ID: " + warrantyId));
 
         WarrantyResponse warrantyResponse = warrantyMapper.fromAddWarrantRequest(warrantyEntity);
 
